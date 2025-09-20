@@ -11,11 +11,11 @@ with app.app_context():
     # สร้าง students (10 คน)
     students = [
         Student(student_code='69000001', title='ด.ญ.', first_name='อรทัย', last_name='ใจดี', dob=date(2008,3,12), school='โรงเรียนสาธิต', email='orn@example.com', program_code='10000001'),
-        Student(student_code='69000002', title='ด.ช.', first_name='กิตติ์', last_name='สุขใจ', dob=date(2007,11,5), school='โรงเรียนกรุงไทย', email='kitt@example.com', program_code='10000001'),
-        Student(student_code='69000003', title='น.ส.', first_name='มินตรา', last_name='เปี่ยมสุข', dob=date(2008,2,20), school='โรงเรียนเมือง', email='min@example.com', program_code='10000002'),
-        Student(student_code='69000004', title='ด.ช.', first_name='อนันต์', last_name='สุขสันต์', dob=date(2006,7,1), school='โรงเรียนแก้ว', email='anan@example.com', program_code='10000002'),
+        Student(student_code='69000002', title='ด.ช.', first_name='กิตติ์', last_name='สุขใจ', dob=date(2007,11,5), school='โรงเรียนราชวินิตบางแก้ว', email='kitt@example.com', program_code='10000001'),
+        Student(student_code='69000003', title='น.ส.', first_name='มินตรา', last_name='เปี่ยมสุข', dob=date(2008,2,20), school='โรงเรียนบางบ่อ', email='min@example.com', program_code='10000002'),
+        Student(student_code='69000004', title='ด.ช.', first_name='อนันต์', last_name='สุขสันต์', dob=date(2006,7,1), school='โรงเรียนวัดศรีวารีน้อย', email='anan@example.com', program_code='10000002'),
         Student(student_code='69000005', title='น.ส.', first_name='ช่อทิพย์', last_name='ทองดี', dob=date(2007,5,14), school='โรงเรียนสาธิต', email='chotip@example.com', program_code='10000001'),
-        Student(student_code='69000006', title='ด.ช.', first_name='พงษ์', last_name='ศรีสุข', dob=date(2007,9,2), school='โรงเรียนกรุงไทย', email='pong@example.com', program_code='10000002'),
+        Student(student_code='69000006', title='ด.ช.', first_name='พงษ์', last_name='ศรีสุข', dob=date(2007,9,2), school='โรงเรียนเตรียมอุดม', email='pong@example.com', program_code='10000002'),
         Student(student_code='69000007', title='ด.ช.', first_name='วุฒิ', last_name='พงศ์', dob=date(2008,4,10), school='โรงเรียนเมือง', email='wut@example.com', program_code='10000001'),
         Student(student_code='69000008', title='น.ส.', first_name='ปรียา', last_name='วิไล', dob=date(2007,12,3), school='โรงเรียนแก้ว', email='priya@example.com', program_code='10000002'),
         Student(student_code='69000009', title='ด.ช.', first_name='ธนภัทร', last_name='มีสุข', dob=date(2006,10,22), school='โรงเรียนสาธิต', email='than@example.com', program_code='10000001'),
