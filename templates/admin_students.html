@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Students (Admin)</h3>
+<form class="row g-2 mb-3">
+  <div class="col-auto"><input name="q" class="form-control" placeholder="ค้นหา" value="{{ request.args.q or '' }}"></div>
+  <div class="col-auto"><input name="school" class="form-control" placeholder="โรงเรียน" value="{{ request.args.school or '' }}"></div>
+  <div class="col-auto">
+    <select name="order" class="form-select">
+      <option value="name">เรียงตามชื่อ</option>
+      <option value="age">เรียงตามอายุ</option>
+    </select>
+  </div>
+  <div class="col-auto"><button class="btn btn-secondary">Filter</button></div>
+</form>
+<table class="table table-striped">
+  <thead><tr><th>รหัส</th><th>ชื่อ</th><th>อายุ</th><th>โรงเรียน</th><th>email</th><th>action</th></tr></thead>
+  <tbody>
+    {% for s in students %}
+    <tr>
+      <td>{{ s.student_code }}</td>
+      <td>{{ s.title }} {{ s.first_name }} {{ s.last_name }}</td>
+      <td>{{ s.age() }}</td>
+      <td>{{ s.school }}</td>
+      <td>{{ s.email }}</td>
+      <td><a class="btn btn-sm btn-primary" href="{{ url_for('student.profile', student_id=s.id) }}">ดูประวัติ</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

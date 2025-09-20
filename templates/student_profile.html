@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>ประวัติ: {{ student.title }} {{ student.first_name }} {{ student.last_name }}</h3>
+<p>รหัส: {{ student.student_code }} | อายุ: {{ student.age() }} | โรงเรียน: {{ student.school }} | อีเมล: {{ student.email }}</p>
+<a class="btn btn-success mb-3" href="{{ url_for('student.register_view', student_id=student.id) }}">ลงทะเบียนวิชา</a>
+<h5>รายวิชาที่ลงทะเบียน</h5>
+<table class="table">
+  <thead><tr><th>รหัสวิชา</th><th>ชื่อ</th><th>หน่วยกิต</th><th>อาจารย์</th><th>เกรด</th></tr></thead>
+  <tbody>
+    {% for r in student.registrations %}
+    <tr><td>{{ r.subject.subject_code }}</td><td>{{ r.subject.name }}</td><td>{{ r.subject.credit }}</td><td>{{ r.subject.instructor }}</td><td>{{ r.grade or '-' }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

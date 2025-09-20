@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4>วิชาที่ยังไม่ได้ลงสำหรับ {{ student.first_name }}</h4>
+<form method="post">
+  <table class="table">
+    <thead><tr><th>เลือก</th><th>รหัส</th><th>ชื่อ</th><th>หน่วยกิต</th><th>อาจารย์</th><th>คนลง</th></tr></thead>
+    <tbody>
+      {% for s in subjects %}
+      <tr>
+        <td><button name="subject_id" value="{{ s.id }}" class="btn btn-sm btn-primary">ลงทะเบียน</button></td>
+        <td>{{ s.subject_code }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.credit }}</td>
+        <td>{{ s.instructor }}</td>
+        <td>{{ s.registrations|length }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</form>
+{% endblock %}
